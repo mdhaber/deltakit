@@ -75,6 +75,7 @@ class _CloudDecoder:
             self,
             syndrome_batch: npt.NDArray[np.uint8],
             leakage_batch: Optional[npt.NDArray[np.uint8]] = None,
+            parallel_jobs: int = 1,
         ):
         """The method decodes the batch of syndromes to boolean values."""
         num_shots = syndrome_batch.shape[0]
@@ -94,7 +95,8 @@ class _CloudDecoder:
         decoder = types.Decoder(
             decoder_type=self._decoder_type,
             use_experimental_graph=self.use_experimental_graph,
-            parameters=self.decoder_parameters
+            parameters=self.decoder_parameters,
+            parallel_jobs=parallel_jobs,
         )
         decoding_result = self.client.decode(
             detectors=detectors,
