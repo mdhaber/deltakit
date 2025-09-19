@@ -84,6 +84,13 @@ security = [
     "ochrona>=2.0.2,<3.0",
     "pip-audit >=2.7.3",
 ]
+# any changes here should be duplicated to dev dependency list
+decoders = [
+    "relay_bp",
+    "beliefmatching",
+    "mwpf",
+    "fusion-blossom",
+]
 dev = [
     # poetry seems to be having trouble with elements of
     # deltakit being "listed as a dependency of itself".
@@ -120,6 +127,11 @@ dev = [
     "bandit>=1.8.6,<2",
     "ochrona>=2.0.2,<3.0",
     "pip-audit >=2.7.3",
+    # "deltakit[decoders]"
+    "relay_bp",
+    "beliefmatching",
+    "mwpf",
+    "fusion-blossom",
     # other
     "pre-commit>=4.2.0,<5",
     "ipykernel>=6.29.5,<7",
