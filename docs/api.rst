@@ -73,8 +73,8 @@ Circuit Manipulation and Noise Generation
     measurement_noise_profile
     noise_profile_with_inverted_noise
 
-Other
-"""""
+Other Circuit Features
+""""""""""""""""""""""
 
 .. autosummary::
     :toctree: _build/generated/
@@ -339,8 +339,8 @@ Decoding Graph Data Types
     DetectorRecord
     OrderedSyndrome
 
-Other
-"""""
+Other Decoding Graph Features
+"""""""""""""""""""""""""""""
 
     DemParser
     DetectorRecorder
@@ -448,8 +448,8 @@ Syndrome Data Tools
     pij_edges_max_diff
     pijs_edge_diff
 
-Other
-"""""
+Other Decoding Utilities
+""""""""""""""""""""""""
 
 .. autosummary::
     :toctree: _build/generated/
