@@ -1,5 +1,7 @@
 # (c) Copyright Riverlane 2020-2025.
-"""Description of ``deltakit.core`` namespace here."""
+"""
+Description of `deltakit.core` namespace here.
+"""
 
 import importlib.metadata
 

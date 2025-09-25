@@ -1,3 +1,8 @@
+# (c) Copyright Riverlane 2020-2025.
+"""
+Description of `deltakit.decode.utils` namespace here.
+"""
+
 from deltakit_decode.utils import *  # noqa: F403
 
 # List only public members in `__all__`.

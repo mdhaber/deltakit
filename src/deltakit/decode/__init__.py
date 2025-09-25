@@ -1,3 +1,8 @@
+# (c) Copyright Riverlane 2020-2025.
+"""
+Description of `deltakit.decode` namespace here.
+"""
+
 from deltakit_decode import *  # noqa: F403
 from deltakit_explorer._cloud_decoders import *  # noqa: F403
 

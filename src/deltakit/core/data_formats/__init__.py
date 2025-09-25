@@ -1,3 +1,8 @@
+# (c) Copyright Riverlane 2020-2025.
+"""
+Sub-package for data formats and converting them to other data types
+"""
+
 from deltakit_core.data_formats import *  # noqa: F403
 
 # List only public members in `__all__`.

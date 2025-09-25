@@ -269,58 +269,89 @@ Description of ``deltakit.core.data_formats`` namespace here.
 ``deltakit.core.decoding_graphs``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description of ``deltakit.core.decoding_graphs`` namespace here.
+Sub-package for defining decoding graphs and related data types; these structures are
+used by many decoders to define their understanding of the code and noise model being
+decoded.
 
 .. currentmodule:: deltakit.core.decoding_graphs
+
+Decoding Graph Abstractions
+"""""""""""""""""""""""""""
 
 .. autosummary::
     :toctree: _build/generated/
 
-    AnyEdgeT
-    Bitstring
-    change_graph_error_probabilities
-    compute_graph_distance
-    compute_graph_distance_for_logical
-    DecodingCode
     DecodingEdge
     DecodingHyperEdge
+    EdgeRecord
+    OrderedDecodingEdges
+    DecodingCode
     DecodingHyperGraph
     DecodingHyperMultiGraph
-    decompositions
-    dem_to_decoding_graph_and_logicals
-    dem_to_hypergraph_and_logicals
-    DemParser
-    DetectorCounter
-    DetectorRecord
-    DetectorRecorder
-    EdgeRecord
-    EdgeT
-    errors_to_syndrome
-    extract_logicals
-    filter_to_data_edges
-    filter_to_measure_edges
-    FixedWidthBitstring
-    get_round_words
-    graph_to_json
-    has_contiguous_nodes
-    hypergraph_to_weighted_edge_list
     HyperLogicals
     HyperMultiGraph
-    inverse_logical_at_boundary
-    is_single_connected_component
-    LogicalsInEdges
     NXCode
     NXDecodingGraph
     NXDecodingMultiGraph
     NXLogicals
-    observable_warning
-    OrderedDecodingEdges
-    OrderedSyndrome
-    parse_explained_dem
+
+Decoding Graph Manipulation Tools
+"""""""""""""""""""""""""""""""""
+
+.. autosummary::
+    :toctree: _build/generated/
+
+    errors_to_syndrome
+    compute_graph_distance
+    compute_graph_distance_for_logical
+    filter_to_data_edges
+    filter_to_measure_edges
+    graph_to_json
+    has_contiguous_nodes
+    hypergraph_to_weighted_edge_list
+    inverse_logical_at_boundary
+    is_single_connected_component
     single_boundary_is_last_node
     unweight_graph
-    vector_weights
     worst_case_num_detectors
+    extract_logicals
+    change_graph_error_probabilities
+    vector_weights
+
+DEM → Decoding Graphs
+"""""""""""""""""""""
+
+.. autosummary::
+    :toctree: _build/generated/
+
+    dem_to_decoding_graph_and_logicals
+    dem_to_hypergraph_and_logicals
+    parse_explained_dem
+
+Decoding Graph Data Types
+"""""""""""""""""""""""""
+
+.. autosummary::
+    :toctree: _build/generated/
+
+    Bitstring
+    FixedWidthBitstring
+    DetectorRecord
+    OrderedSyndrome
+
+Other
+"""""
+
+    DemParser
+    DetectorRecorder
+    LogicalsInEdges
+    observable_warning
+    decompositions
+    split_measurement_bitstring
+    AnyEdgeT
+    DetectorCounter
+    EdgeT
+    get_round_words
 
 .. _api-deltakit-decode:
 
@@ -330,6 +361,9 @@ Description of ``deltakit.core.decoding_graphs`` namespace here.
 .. currentmodule:: deltakit.decode
 
 Description of ``deltakit.decode`` namespace here.
+
+Decoders
+^^^^^^^^
 
 .. autosummary::
     :toctree: _build/generated/
@@ -347,28 +381,28 @@ Description of ``deltakit.decode`` namespace here.
 ``deltakit.decode.analysis``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description of ``deltakit.decode.analysis`` namespace here.
+Please describe ``deltakit.decode.analysis`` namespace here.
 
 .. currentmodule:: deltakit.decode.analysis
 
 .. autosummary::
     :toctree: _build/generated/
 
+    run_decoding_on_circuit
+    RunAllAnalysisEngine
     DecoderManager
     InvalidGlobalManagerStateError
-    run_decoding_on_circuit
     EmpiricalDecodingErrorDistribution
     B8DecoderManager
     GraphDecoderManager
     StimDecoderManager
-    RunAllAnalysisEngine
 
 .. _api-deltakit-decode-noise_sources:
 
 ``deltakit.decode.noise_sources``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description of ``deltakit.decode.noise_sources`` namespace here.
+Sub-package for defining sources of noise to be used in QEC experiments.
 
 .. currentmodule:: deltakit.decode.noise_sources
 
@@ -399,6 +433,9 @@ Description of ``deltakit.decode.noise_sources`` namespace here.
 
 .. currentmodule:: deltakit.decode.utils
 
+Syndrome Data Tools
+"""""""""""""""""""
+
 .. autosummary::
     :toctree: _build/generated/
 
@@ -407,11 +444,18 @@ Description of ``deltakit.decode.noise_sources`` namespace here.
     create_dem_from_pij
     dem_and_pij_edges_max_diff
     generate_expectation_data
-    make_logger
-    parse_stim_circuit
     pij_and_dem_edge_diff
     pij_edges_max_diff
     pijs_edge_diff
+
+Other
+"""""
+
+.. autosummary::
+    :toctree: _build/generated/
+
+    make_logger
+    parse_stim_circuit
     plot_correlation_matrix
     split_measurement_bitstring
     VisDecodingGraph3D

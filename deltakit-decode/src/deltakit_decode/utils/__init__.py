@@ -1,5 +1,7 @@
 # (c) Copyright Riverlane 2020-2025.
-"""Description of ``deltakit.decode.utils`` namespace here."""
+"""
+Description of `deltakit.decode.utils` namespace here.
+"""
 
 from deltakit_decode.utils._decoding_graph_visualiser import VisDecodingGraph3D
 from deltakit_decode.utils._derivation_tools import (generate_expectation_data,
