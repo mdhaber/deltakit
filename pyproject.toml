@@ -149,6 +149,9 @@ skip = [".pixi", ".tox", ".venv"]
 exclude_dirs = ['.github', '.pixi', '.tox', '.venv', './tools/vale.py', 'tools/vale.py']
 skips = ['B101', 'B311']  # B101 is just use of `assert`; 'B311' is use of random module
 
+[tool.typos.default]
+locale = 'en-gb'
+
 [tool.typos.default.extend-words]
 # Don't correct "iy" - often used in the context of "probability of an IY operation"
 iy = "iy"
@@ -159,6 +162,7 @@ distribtuion = "distribution"
 interm = "interm"
 ket = "ket"
 Alise = "Alise"
+DEPOLARIZE = "DEPOLARIZE"
 
 [tool.typos.files]
 # Paths/patterns to exclude from spell checking
