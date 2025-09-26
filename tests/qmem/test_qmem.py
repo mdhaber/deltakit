@@ -278,11 +278,8 @@ def test_qmem():
         for phys in physical_error_rates:
             num_shots = int(min(phys**-2, max_shots))
             decoder_managers.extend(
-                (
-                    num_shots,
-                    experiment_decoder_manager(distance, distance, distance, phys),
-                )
-                for distance in distances
+                (num_shots, experiment_decoder_manager(d, d, d, phys))
+                for d in distances
             )
 
         # Aggregate managers into run engines for multiprocessing
