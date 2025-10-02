@@ -48,7 +48,7 @@ exclude = [
 
 # Only include the deltakit folders, not the docs/, tools/ or
 # other utility folder.
-include = ["deltakit-*/**/*.py", "src/deltakit/**/*.py"]
+include = ["deltakit-*/**/*.py", "src/deltakit/**/*.py", "tools/**/*.py", "tests/**/*.py"]
 
 # Same as Black.
 line-length = 88
@@ -69,6 +69,9 @@ select = ["A", "B", "E", "F", "N", "PL", "RUF100", "W", "NPY"]
 ]
 
 [format]
+# These packages don't want to use ruff format yet
+exclude = ["deltakit-explorer/**", "./deltakit-decode/**"]
+
 # Like Black, use double quotes for strings.
 quote-style = "double"
 
