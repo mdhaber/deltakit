@@ -127,7 +127,8 @@ dev = [
     "python-semantic-release>=10.2.0",
     "tomlkit>=0.13,<1",
     "deptry>=0.23, <1",
-    "ipykernel >=6.29.5,<7"
+    "ipykernel >=6.29.5,<7",
+    "pip!=25.2",
 ]
 
 # for mypy configuration, see `mypy.ini`.
