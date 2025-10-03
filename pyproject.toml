@@ -211,3 +211,10 @@ mode = "update"
 [tool.semantic_release.commit_parser_options]
 other_allowed_tags = ["build", "chore", "ci", "docs", "style", "refactor", "tests", "release", "dev"]
 allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "tests", "release", "dev"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+deltakit-core = { path = "./deltakit-core/", develop = true }
+deltakit-circuit = { path = "./deltakit-circuit/", develop = true }
+deltakit-decode = { path = "./deltakit-decode/", develop = true }
+deltakit-explorer = { path = "./deltakit-explorer/", develop = true }
