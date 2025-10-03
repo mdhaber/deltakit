@@ -219,3 +219,12 @@ deltakit-core = { path = "./deltakit-core/", develop = true }
 deltakit-circuit = { path = "./deltakit-circuit/", develop = true }
 deltakit-decode = { path = "./deltakit-decode/", develop = true }
 deltakit-explorer = { path = "./deltakit-explorer/", develop = true }
+
+[tool.hatch.envs.default]
+dependencies = [
+  "deltakit-core @ {root:uri}/deltakit-core",
+  "deltakit-circuit @ {root:uri}/deltakit-circuit",
+  "deltakit-decode @ {root:uri}/deltakit-decode",
+  "deltakit-explorer @ {root:uri}/deltakit-explorer",
+]
+features = ["dev"]
