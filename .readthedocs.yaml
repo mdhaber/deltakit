@@ -9,11 +9,9 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.13"
-
-python:
-  install:
-    - method: pip
-      path: .[docs]
+  commands:
+    - curl -sSf https://pixi.sh/install.sh | sh
+    - /home/docs/.pixi/bin/pixi run sphinx-build -T -W -n -b html -d _build/doctrees -D language=en docs $READTHEDOCS_OUTPUT/html
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
