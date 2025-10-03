@@ -80,10 +80,9 @@ environment and run tasks.
 
 After cloning the repository and [installing `pixi`](https://pixi.sh/latest/), navigate to
 the root directory of the repository in a terminal and install dependencies with `pixi install`.
-You can then activate the Python environment with `pixi shell`.
+`pixi shell` activates a development virtual environment with editable installs of Deltakit
+packages so you can make changes and interact with the modified code.
 To deactivate the environment, run `exit`.
-To set up the Python interpreter in VS Code, you can set the `python.defaultInterpreterPath`
-variable to `"${workspaceFolder}/.pixi/envs/default/bin/python"` in `settings.json`.
 
 ```{dropdown} Linux/macOS users...
 Depending on system settings, you may experience a `Too many open files (os error 24) at path...`
@@ -91,9 +90,11 @@ error. This is [known issue](https://github.com/prefix-dev/pixi/issues/2626) tha
 resolved by increasing the maximum number of open file descriptors; e.g., `ulimit -n 512`.
 ```
 
-`pixi shell` activates a development virtual environment with editable installs of Deltakit
-packages so you can make changes and interact with the modified code. This environment
-is also available in [several popular IDEs](https://pixi.sh/dev/integration/editor/vscode/).
+```{dropdown} IDE users...
+This environment is also available in [several popular IDEs](https://pixi.sh/dev/integration/editor/vscode/).
+For instance, to set up the Python interpreter in VS Code, you can set the `python.defaultInterpreterPath`
+variable to `"${workspaceFolder}/.pixi/envs/default/bin/python"` in `settings.json`.
+```
 
 You can also perform important tasks with `pixi run`. For example:
 
@@ -130,6 +131,71 @@ package.
 `pre-commit` has been configured to perform several common tests before each commit.
 To enable `pre-commit`, run `pre-commit install` within a `pixi shell` (or
 `pixi run pre-commit install` otherwise).
+
+```{dropdown} Conda / Mamba / Poetry / Hatch / uv users...
+You are welcome to manage your development environment using tools other than `pixi`.
+
+::::{tab-set}
+:::{tab-item} Conda / Mamba
+:sync: tab1
+```bash
+# Create the virtual environment
+conda env create -f environment.yml
+
+# Activate the environment
+conda activate deltakit-conda
+
+# Run tests:
+pytest deltakit-explorer
+```
+:::
+
+:::{tab-item} Poetry
+:sync: tab2
+```bash
+# Install deltakit and developer dependencies
+poetry install --extras "dev"
+
+# Run tests:
+poetry run pytest deltakit-explorer
+```
+As shown, `pytest` is run outside of a poetry shell, hence the need for the
+`poetry run` prefix. If you have the `poetry shell` extension and activate it,
+the prefix is not needed.
+:::
+
+:::{tab-item} Hatch
+:sync: tab3
+```bash
+# Install dependencies and activate shell
+hatch shell
+
+# Run tests:
+pytest deltakit-explorer
+```
+:::
+
+:::{tab-item} uv
+:sync: tab4
+```bash
+# Install dependencies
+uv sync --extra dev
+
+# Run tests:
+uv run pytest deltakit-explorer
+```
+As shown, `pytest` is run outside of a virtual environment, hence the need for the
+`uv run` prefix. If you use virtual environments with `uv` and activate the new
+virtual environment, the prefix is not needed.
+:::
+
+There is not a designated task runner for use with tools other than `pixi`. Common
+commands besides `pytest <package>` shown above  are `ruff check` for linting, `typos`
+to find typos, `mypy <package>` for static type checking, and `pre-commit run -a`
+to run several pre-commit checks. For additional commands, see the `[tasks]`
+section of [`pixi.ini`](https://github.com/Deltakit/deltakit/blob/main/pixi.toml).
+
+```
 
 ### Code of Conduct
 When contributing, always follow our [code of conduct](CODE_OF_CONDUCT.md).
