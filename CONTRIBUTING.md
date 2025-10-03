@@ -81,7 +81,7 @@ environment and run tasks.
 After cloning the repository and [installing `pixi`](https://pixi.sh/latest/), navigate to
 the root directory of the repository in a terminal and install dependencies with `pixi install`. You can then activate the Python environment with `pixi shell`. To deactivate the environment, run `exit`.
 
-Run `pixi install -e dev` to create a development environment that includes `pytest` dependencies. You can then activate the Python environment with `pixi shell -e dev`. To set up the Python interpreter in VS Code, you can set the `python.defaultInterpreterPath` variable to `"${workspaceFolder}/.pixi/envs/dev/bin/python"` in `settings.json`.
+Run `pixi install` to create a development environment that includes `pytest` dependencies. You can then activate the Python environment with `pixi shell`. To set up the Python interpreter in VS Code, you can set the `python.defaultInterpreterPath` variable to `"${workspaceFolder}/.pixi/envs/default/bin/python"` in `settings.json`.
 
 ```{dropdown} Linux/macOS users...
 Depending on system settings, you may experience a `Too many open files (os error 24) at path...`
