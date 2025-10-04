@@ -168,7 +168,10 @@ the prefix is not needed.
 :::{tab-item} Hatch
 :sync: tab3
 ```bash
-# Install dependencies and activate shell
+# Create environment
+hatch env create
+
+# Activate shell
 hatch shell
 
 # Run tests:

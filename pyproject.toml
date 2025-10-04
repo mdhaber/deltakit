@@ -221,11 +221,11 @@ deltakit-decode = { path = "./deltakit-decode/", develop = true }
 deltakit-explorer = { path = "./deltakit-explorer/", develop = true }
 
 [tool.hatch.envs.default]
-dependencies = [
-  "deltakit-core @ {root:uri}/deltakit-core",
-  "deltakit-circuit @ {root:uri}/deltakit-circuit",
-  "deltakit-decode @ {root:uri}/deltakit-decode",
-  "deltakit-explorer @ {root:uri}/deltakit-explorer",
+pre-install-commands = [
+  "pip install -e ./deltakit-core",
+  "pip install -e ./deltakit-circuit",
+  "pip install -e ./deltakit-decode",
+  "pip install -e ./deltakit-explorer",
 ]
 features = ["dev"]
 
