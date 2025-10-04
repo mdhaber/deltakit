@@ -6,7 +6,6 @@ dependencies:
 - pandoc >=3.7.0.2,<4
 - python >=3.10
 - actionlint >=1.7
-- pixi-pycharm >=0.0.8,<0.0.9
 - pip
 - pip:
   - -e ./deltakit-core/
