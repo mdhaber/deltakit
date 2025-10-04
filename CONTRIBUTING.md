@@ -132,12 +132,13 @@ package.
 To enable `pre-commit`, run `pre-commit install` within a `pixi shell` (or
 `pixi run pre-commit install` otherwise).
 
-```{dropdown} Conda / Mamba / Poetry / Hatch / uv users...
+:::::{dropdown} Conda / Mamba / Poetry / Hatch / uv users...
 You are welcome to manage your development environment using tools other than `pixi`.
 
 ::::{tab-set}
 :::{tab-item} Conda / Mamba
 :sync: tab1
+
 ```bash
 # Create the virtual environment
 conda env create -f environment.yml
@@ -189,13 +190,14 @@ As shown, `pytest` is run outside of a virtual environment, hence the need for t
 virtual environment, the prefix is not needed.
 :::
 
+::::
+
 There is not a designated task runner for use with tools other than `pixi`. Common
 commands besides `pytest <package>` shown above  are `ruff check` for linting, `typos`
 to find typos, `mypy <package>` for static type checking, and `pre-commit run -a`
 to run several pre-commit checks. For additional commands, see the `[tasks]`
 section of [`pixi.ini`](https://github.com/Deltakit/deltakit/blob/main/pixi.toml).
-
-```
+:::::
 
 ### Code of Conduct
 When contributing, always follow our [code of conduct](CODE_OF_CONDUCT.md).
