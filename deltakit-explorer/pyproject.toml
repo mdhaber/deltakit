@@ -45,6 +45,7 @@ dependencies = [
     "pandas >= 2.0",
     "pandas-stubs",
     "types-seaborn",
+    "scipy-stubs",
 ]
 
 [project.urls]
