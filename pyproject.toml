@@ -228,3 +228,9 @@ dependencies = [
   "deltakit-explorer @ {root:uri}/deltakit-explorer",
 ]
 features = ["dev"]
+
+[tool.uv.sources]
+deltakit-core = { path = "deltakit-core" }
+deltakit-circuit = { path = "deltakit-circuit" }
+deltakit-decode = { path = "deltakit-decode" }
+deltakit-explorer = { path = "deltakit-explorer" }
