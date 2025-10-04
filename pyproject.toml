@@ -229,8 +229,16 @@ dependencies = [
 ]
 features = ["dev"]
 
+[tool.uv.workspace]
+members = [
+  "deltakit-core",
+  "deltakit-circuit",
+  "deltakit-decode",
+  "deltakit-explorer",
+]
+
 [tool.uv.sources]
-deltakit-core = { path = "deltakit-core" }
-deltakit-circuit = { path = "deltakit-circuit" }
-deltakit-decode = { path = "deltakit-decode" }
-deltakit-explorer = { path = "deltakit-explorer" }
+deltakit-core     = { workspace = true }
+deltakit-circuit  = { workspace = true }
+deltakit-decode   = { workspace = true }
+deltakit-explorer = { workspace = true }
