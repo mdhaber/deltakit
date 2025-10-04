@@ -44,6 +44,7 @@ dependencies = [
     "bposd >= 2.1",
     "pandas >= 2.0",
     "pandas-stubs",
+    "types-seaborn",
 ]
 
 [project.urls]
